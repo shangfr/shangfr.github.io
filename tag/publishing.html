@@ -57,12 +57,53 @@
 	  <div class="content">
 <div class="page-header"><h1>Shangfr's Blog <small>publishing</small></h1></div>
 <div class='article'>
-	<h2>sfr的技术博客</h2>
+	<h2>MySQL使用文档</h2>
 	<div class="well small">Permalink: <a class="more" href="/my-super-post.html">2019-08-08 10:20:00+08:00</a>
-by <a class="url fn" href="/author/sfr.html">sfr </a>
+by <a class="url fn" href="/author/shangfr.html">shangfr </a>
  in <a href="/category/ji-zhu.html">技术</a>
 tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/publishing.html">publishing</a> </div>
-	<div class="summary"><p>这是我的第一篇文章</p> <a class="btn primary xsmall" href="/my-super-post.html">more…</a>
+	<div class="summary"><ul>
+<li>[x] <strong>操作系统</strong> Windows  <strong>运行程序</strong>  CMD命令提示符   </li>
+</ul>
+<h2>1、命令行操作MySQL</h2>
+<p>通过<strong>PowerShell </strong>或<strong>CMD</strong>命令提示符程序启动MySQL服务：</p>
+<ul>
+<li>启动MySql57服务器</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp"># 以管理员身份运行CMD,然后在命令行输入：</span>
+<span class="n">net</span> <span class="n">start</span> <span class="n">mysql57</span>
+</code></pre></div>
+
+
+<ul>
+<li>登陆MySql数据库</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp"># 命令行操作：</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span>
+<span class="cp"># 输入密码后，回车</span>
+</code></pre></div>
+
+
+<ul>
+<li>MySql数据库操作基础</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#显示数据库</span>
+<span class="k">show</span> <span class="k">databases</span><span class="p">;</span>
+
+<span class="c1">#判断是否存在数据库taodata,有的话先删除</span>
+<span class="k">drop</span> <span class="k">database</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#创建数据库</span>
+<span class="k">create</span> <span class="k">database</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#删除数据库</span>
+<span class="k">drop</span> <span class="k">database</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#使用该数据库</span>
+<span class="k">use</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#显示数据库中的表</span>
+<span class="k">show …</span></code></pre></div> <a class="btn primary xsmall" href="/my-super-post.html">more…</a>
 	</div>
 </div>	
 

@@ -56,12 +56,271 @@
 	  </div>
 	  <div class="content">
 	<div class='article'>
-		<div class="page-header"><h1>sfr的技术博客</h1></div>
+		<div class="page-header"><h1>MySQL使用文档</h1></div>
 		<div class="well small">Permalink: <a class="more" href="/my-super-post.html">2019-08-08 10:20:00+08:00</a>
-by <a class="url fn" href="/author/sfr.html">sfr </a>
+by <a class="url fn" href="/author/shangfr.html">shangfr </a>
  in <a href="/category/ji-zhu.html">技术</a>
 tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/publishing.html">publishing</a> </div>
-		<div><p>这是我的第一篇文章</p></div>
+		<div><ul>
+<li>[x] <strong>操作系统</strong> Windows  <strong>运行程序</strong>  CMD命令提示符   </li>
+</ul>
+<h2>1、命令行操作MySQL</h2>
+<p>通过<strong>PowerShell </strong>或<strong>CMD</strong>命令提示符程序启动MySQL服务：</p>
+<ul>
+<li>启动MySql57服务器</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp"># 以管理员身份运行CMD,然后在命令行输入：</span>
+<span class="n">net</span> <span class="n">start</span> <span class="n">mysql57</span>
+</code></pre></div>
+
+
+<ul>
+<li>登陆MySql数据库</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp"># 命令行操作：</span>
+<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span>
+<span class="cp"># 输入密码后，回车</span>
+</code></pre></div>
+
+
+<ul>
+<li>MySql数据库操作基础</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#显示数据库</span>
+<span class="k">show</span> <span class="k">databases</span><span class="p">;</span>
+
+<span class="c1">#判断是否存在数据库taodata,有的话先删除</span>
+<span class="k">drop</span> <span class="k">database</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#创建数据库</span>
+<span class="k">create</span> <span class="k">database</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#删除数据库</span>
+<span class="k">drop</span> <span class="k">database</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#使用该数据库</span>
+<span class="k">use</span> <span class="n">taodata</span><span class="p">;</span>
+
+<span class="c1">#显示数据库中的表</span>
+<span class="k">show</span> <span class="kp">tables</span><span class="p">;</span>
+
+<span class="c1">#先判断表是否存在,存在先删除</span>
+<span class="k">drop</span> <span class="k">table</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="c1">#创建表</span>
+<span class="k">create</span> <span class="k">table</span> <span class="nf">student</span><span class="p">(</span>
+    <span class="n">id</span> <span class="kt">int</span> <span class="kp">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+    <span class="n">name</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">sex</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+    <span class="kt">date</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">content</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">)</span><span class="k">default</span> <span class="kp">charset</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+
+<span class="c1">#删除表</span>
+<span class="k">drop</span> <span class="k">table</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="c1">#查看表的结构</span>
+<span class="k">describe</span> <span class="n">student</span><span class="p">;</span>  <span class="c1">#可以简写为desc student;</span>
+
+<span class="c1">#插入数据</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">student</span> <span class="k">values</span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1988-10-2&#39;</span><span class="p">,</span><span class="s1">&#39;......&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">student</span> <span class="k">values</span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="s1">&#39;1999-03-6&#39;</span><span class="p">,</span><span class="s1">&#39;......&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">student</span> <span class="k">values</span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1999-08-8&#39;</span><span class="p">,</span><span class="s1">&#39;......&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">student</span> <span class="k">values</span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;dd&#39;</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="s1">&#39;1989-12-8&#39;</span><span class="p">,</span><span class="s1">&#39;......&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">student</span> <span class="k">values</span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;ee&#39;</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="s1">&#39;1989-09-6&#39;</span><span class="p">,</span><span class="s1">&#39;......&#39;</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">student</span> <span class="k">values</span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;ff&#39;</span><span class="p">,</span><span class="s1">&#39;null&#39;</span><span class="p">,</span><span class="s1">&#39;1989-09-6&#39;</span><span class="p">,</span><span class="s1">&#39;......&#39;</span><span class="p">);</span>
+<span class="c1">#查询表中的数据</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">name</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="c1">#修改某一条数据</span>
+<span class="k">update</span> <span class="n">student</span> <span class="kt">set</span> <span class="n">sex</span><span class="o">=</span><span class="s1">&#39;男&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+
+<span class="c1">#删除数据</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">student</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="c1"># and 且</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">where</span> <span class="kt">date</span><span class="o">&gt;</span><span class="s1">&#39;1988-1-2&#39;</span> <span class="k">and</span> <span class="kt">date</span><span class="o">&lt;</span><span class="s1">&#39;1988-12-1&#39;</span><span class="p">;</span>
+
+<span class="c1"># or 或</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">where</span> <span class="kt">date</span><span class="o">&lt;</span><span class="s1">&#39;1999-11-2&#39;</span> <span class="k">or</span> <span class="kt">date</span><span class="o">&gt;</span><span class="s1">&#39;1988-12-1&#39;</span><span class="p">;</span>
+
+<span class="c1">#between</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">where</span> <span class="kt">date</span> <span class="k">between</span> <span class="s1">&#39;1989-1-2&#39;</span> <span class="k">and</span> <span class="s1">&#39;1998-12-1&#39;</span><span class="p">;</span>
+
+<span class="c1">#in 查询制定集合内的数据</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">where</span> <span class="n">id</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">#排序 asc 升序  desc 降序</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span> <span class="k">asc</span><span class="p">;</span>
+
+<span class="c1">#分组查询 #聚合函数</span>
+<span class="k">select</span> <span class="nf">max</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="n">name</span><span class="p">,</span><span class="n">sex</span> <span class="k">from</span> <span class="n">student</span> <span class="k">group</span> <span class="k">by</span> <span class="n">sex</span><span class="p">;</span>
+
+<span class="k">select</span> <span class="nf">min</span><span class="p">(</span><span class="kt">date</span><span class="p">)</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="k">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">as</span> <span class="s1">&#39;求平均&#39;</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="k">select</span> <span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>   <span class="c1">#统计表中总数</span>
+
+<span class="k">select</span> <span class="nf">count</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>   <span class="c1">#统计表中性别总数  若有一条数据中sex为空的话,就不予以统计~</span>
+
+<span class="k">select</span> <span class="nf">sum</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">from</span> <span class="n">student</span><span class="p">;</span>
+
+<span class="c1">#查询第i条以后到第j条的数据(不包括第i条)</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">limit</span> <span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span>  <span class="c1">#显示3-5条数据</span>
+
+<span class="c1">#巩固练习</span>
+<span class="k">create</span> <span class="k">table</span> <span class="nf">c</span><span class="p">(</span>
+ <span class="n">id</span> <span class="kt">int</span> <span class="k">primary</span> <span class="k">key</span> <span class="kp">auto_increment</span><span class="p">,</span>
+ <span class="n">name</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+ <span class="n">sex</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="p">,</span>  <span class="c1">#DEFAULT &#39;男&#39; ,</span>
+ <span class="n">age</span> <span class="kt">int</span> <span class="k">unsigned</span><span class="p">,</span> <span class="c1">#不能为负值(如为负值 则默认为0)</span>
+ <span class="n">sno</span> <span class="kt">int</span> <span class="k">unique</span>    <span class="c1">#不可重复</span>
+<span class="p">);</span>
+
+<span class="k">drop</span> <span class="k">table</span> <span class="n">c</span><span class="p">;</span>
+<span class="k">desc</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="k">insert</span> <span class="k">into</span> <span class="nf">c</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">sex</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">sno</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;涛哥&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="nf">c</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">sex</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">sno</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="nf">c</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">sex</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">sno</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="s1">&#39;平平&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">...</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="c1">#修改数据</span>
+<span class="k">update</span> <span class="n">c</span> <span class="kt">set</span> <span class="n">age</span><span class="o">=</span><span class="mi">66</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">update</span> <span class="n">c</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;花花&#39;</span><span class="p">,</span><span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span><span class="n">sex</span><span class="o">=</span><span class="s1">&#39;女&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">c</span> <span class="k">where</span> <span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span>
+
+<span class="c1">#常用查询语句</span>
+<span class="k">select</span> <span class="n">name</span><span class="p">,</span><span class="n">age</span> <span class="p">,</span><span class="n">id</span> <span class="k">from</span> <span class="n">c</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">c</span> <span class="k">where</span> <span class="n">age</span><span class="o">&gt;</span><span class="mi">40</span> <span class="k">and</span> <span class="n">age</span><span class="o">&lt;</span><span class="mi">60</span><span class="p">;</span>  <span class="c1">#and</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">c</span> <span class="k">where</span> <span class="n">age</span><span class="o">&lt;</span><span class="mi">40</span> <span class="k">or</span> <span class="n">age</span><span class="o">&lt;</span><span class="mi">60</span><span class="p">;</span>  <span class="c1">#or</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">c</span> <span class="k">where</span> <span class="n">age</span> <span class="k">between</span> <span class="mi">40</span> <span class="k">and</span> <span class="mi">60</span> <span class="c1">#between</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">c</span> <span class="k">where</span> <span class="n">age</span> <span class="k">in</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">99</span><span class="p">);</span>     <span class="c1">#in 查询指定集合内的数据</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">c</span> <span class="k">order</span> <span class="k">by</span> <span class="n">age</span> <span class="k">desc</span><span class="p">;</span>      <span class="c1">#order by （asc升序 des降序）</span>
+
+<span class="c1">#分组查询</span>
+<span class="k">select</span> <span class="n">name</span><span class="p">,</span><span class="nf">max</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="k">from</span> <span class="n">c</span> <span class="k">group</span> <span class="k">by</span> <span class="n">sex</span><span class="p">;</span>  <span class="c1">#按性别分组查年龄最大值</span>
+<span class="c1">#聚合函数</span>
+<span class="k">select</span> <span class="nf">min</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="k">from</span> <span class="n">c</span><span class="p">;</span>
+<span class="k">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="k">as</span> <span class="s1">&#39;平均年龄 &#39;</span> <span class="k">from</span> <span class="n">c</span><span class="p">;</span>
+<span class="k">select</span> <span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">c</span><span class="p">;</span>  <span class="c1">#统计表中数据总数</span>
+<span class="k">select</span> <span class="nf">sum</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="k">from</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="c1">#修改表的名字</span>
+<span class="c1">#格式:alter table tbl_name rename to new_name</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">c</span> <span class="k">rename</span> <span class="k">to</span> <span class="n">a</span><span class="p">;</span>
+
+<span class="c1">#表结构修改</span>
+<span class="k">create</span> <span class="k">table</span> <span class="nf">test</span>
+<span class="p">(</span>
+<span class="n">id</span> <span class="kt">int</span> <span class="k">not</span> <span class="no">null</span> <span class="kp">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="c1">#设定主键</span>
+<span class="n">name</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span> <span class="k">default</span> <span class="s1">&#39;NoName&#39;</span><span class="p">,</span> <span class="c1">#设定默认值</span>
+<span class="n">department_id</span> <span class="kt">int</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+<span class="n">position_id</span> <span class="kt">int</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+<span class="k">unique</span> <span class="p">(</span><span class="n">department_id</span><span class="p">,</span><span class="n">position_id</span><span class="p">)</span> <span class="c1">#设定唯一值</span>
+<span class="p">);</span>
+
+<span class="c1">#修改表的名字</span>
+<span class="c1">#格式:alter table tbl_name rename to new_name</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">rename</span> <span class="k">to</span> <span class="n">test_rename</span><span class="p">;</span>
+
+<span class="c1">#向表中增加一个字段(列)</span>
+<span class="c1">#格式:alter table tablename add columnname type;/alter table tablename add(columnname type);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">add</span>  <span class="n">columnname</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+<span class="c1">#修改表中某个字段的名字</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">tablename</span> <span class="k">change</span> <span class="n">columnname</span> <span class="n">newcolumnname</span> <span class="n">type</span><span class="p">;</span>  <span class="c1">#修改一个表的字段名</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">change</span> <span class="n">name</span> <span class="n">uname</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
+
+<span class="c1">#表position 增加列test</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">position</span> <span class="k">add</span><span class="p">(</span><span class="n">test</span> <span class="kt">char</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="c1">#表position 修改列test</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">position</span> <span class="n">modify</span> <span class="n">test</span> <span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span><span class="p">;</span>
+<span class="c1">#表position 修改列test 默认值</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">position</span> <span class="k">alter</span> <span class="n">test</span> <span class="kt">set</span> <span class="k">default</span> <span class="s1">&#39;system&#39;</span><span class="p">;</span>
+<span class="c1">#表position 去掉test 默认值</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">position</span> <span class="k">alter</span> <span class="n">test</span> <span class="k">drop</span> <span class="k">default</span><span class="p">;</span>
+<span class="c1">#表position 去掉列test</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">position</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">test</span><span class="p">;</span>
+<span class="c1">#表depart_pos 删除主键</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">depart_pos</span> <span class="k">drop</span> <span class="k">primary</span> <span class="k">key</span><span class="p">;</span>
+<span class="c1">#表depart_pos 增加主键</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">depart_pos</span> <span class="k">add</span> <span class="k">primary</span> <span class="k">key</span> <span class="nf">PK_depart_pos</span>
+<span class="p">(</span><span class="n">department_id</span><span class="p">,</span><span class="n">position_id</span><span class="p">);</span>
+
+<span class="c1">#用文本方式将数据装入数据库表中（例如D:/mysql.txt）</span>
+<span class="k">load</span> <span class="n">data</span> <span class="n">local</span> <span class="k">infile</span> <span class="s2">&quot;D:/mysql.txt&quot;</span> <span class="k">into</span> <span class="k">table</span> <span class="n">MYTABLE</span><span class="p">;</span>
+
+<span class="c1">#导入.sql文件命令（例如D:/mysql.sql）</span>
+<span class="n">source</span> <span class="n">d</span><span class="p">:</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="k">sql</span><span class="p">;</span>  <span class="c1">#或者  /. d:/mysql.sql;</span>
+</code></pre></div>
+
+
+<h2>2、Python操作MySQL</h2>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># coding: utf-8</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;mysql+pymysql://root:******@localhost:3306/taodata&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">      select * from student;</span>
+<span class="s1">      &#39;&#39;&#39;</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;select * from student where date&lt;&#39;1999-11-2&#39; or date&gt;&#39;1988-12-1&#39;;&quot;</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;lab&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="s1">&#39;val&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1">#存入数据库</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="n">engine</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;select * from test;&quot;</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+<span class="c1">#追加数据到现有表</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="n">engine</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;select * from test;&quot;</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;show tables;&quot;</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;select * from test;&quot;</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2>3、R操作MySQL</h2>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">DBI</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">RMySQL</span><span class="p">)</span>
+<span class="n">con</span> <span class="o">&lt;-</span> <span class="nf">dbConnect</span><span class="p">(</span><span class="nf">MySQL</span><span class="p">(),</span><span class="n">host</span><span class="o">=</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="m">3306</span><span class="p">,</span><span class="n">dbname</span><span class="o">=</span><span class="s">&quot;taodata&quot;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s">&quot;shangfr&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s">&quot;******&quot;</span><span class="p">)</span>
+
+<span class="c1">#获取连接信息，查看database下所有表 </span>
+<span class="nf">dbListTables</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+<span class="nf">dbRemoveTable</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+<span class="c1">#断开连接</span>
+<span class="c1">#dbDisconnect(con)</span>
+<span class="n">fruits</span> <span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">ID</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;苹果&quot;</span><span class="p">,</span><span class="s">&quot;香蕉&quot;</span><span class="p">,</span><span class="s">&quot;梨子&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;西瓜&quot;</span><span class="p">),</span><span class="n">price</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">8.8</span><span class="p">,</span><span class="m">4.98</span><span class="p">,</span><span class="m">7.8</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">2.1</span><span class="p">),</span><span class="n">discount</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;无&quot;</span><span class="p">,</span><span class="s">&quot;打折&quot;</span><span class="p">,</span><span class="s">&quot;无&quot;</span><span class="p">,</span><span class="s">&quot;售罄&quot;</span><span class="p">,</span><span class="s">&quot;批发&quot;</span><span class="p">))</span>  
+<span class="c1"># 如果是中文操作系统，系统默认的是gbk字符集，将dataframe写入数据库前，需先确保数据库字符集与操作系统字符集一致。</span>
+<span class="nf">Sys.getlocale</span><span class="p">()</span> <span class="c1">#查看系统字符集</span>
+<span class="c1"># 打开cmd,进入mysql,修改taodata数据库字符集;</span>
+<span class="n">ALTER</span> <span class="n">SCHEMA</span> <span class="n">`taodata`</span>  <span class="n">DEFAULT</span> <span class="n">CHARACTER</span> <span class="n">SET</span> <span class="n">gbk</span>  <span class="n">DEFAULT</span> <span class="n">COLLATE</span> <span class="n">gbk_chinese_ci</span> <span class="p">;</span>
+
+
+<span class="nf">dbListTables</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+<span class="nf">dbWriteTable</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="s">&quot;fruits&quot;</span><span class="p">,</span><span class="n">fruits</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+
+<span class="nf">dbReadTable</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="s">&quot;fruits&quot;</span><span class="p">)</span>
+<span class="c1">#解决中文显示乱码问题</span>
+<span class="nf">dbSendQuery</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="s">&#39;SET NAMES GBK&#39;</span><span class="p">)</span>
+<span class="nf">dbReadTable</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="s">&quot;fruits&quot;</span><span class="p">)</span>
+
+<span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;show create table fruits;&quot;</span>
+<span class="n">res</span> <span class="o">&lt;-</span> <span class="nf">dbSendQuery</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">)</span>  
+<span class="nf">dbFetch</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="m">-1</span><span class="p">)</span> <span class="c1">#取前2条数据，n=-1时是获取所有数据  </span>
+<span class="nf">dbClearResult</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>​                           Copyright © 2019  ShangFR </p></div>
 	</div>
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
