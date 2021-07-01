@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Flex 2.0</title>
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/main.css" />
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Flex Atom Feed" />
+        <meta name="description" content="Flex theme 2.0 comes with new features. In fact there are two new features. The biggest change is localization support. Yes, Flex now can be..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://localhost:8000/">Flex <strong>The minimalist Pelican theme</strong></a></h1>
+                <nav><ul>
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+                    <li><a href="http://localhost:8000/pages/about.html">About</a></li>
+                    <li><a href="http://localhost:8000/pages/contact.html">Contact</a></li>
+                    <li class="active"><a href="http://localhost:8000/category/news.html">News</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://localhost:8000/flex-pelican-theme-update-2-0.html" rel="bookmark"
+           title="Permalink to Flex 2.0">Flex 2.0</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-09-13T08:00:00-04:00">
+                Published: September 13, 2016
+        </abbr>
+		<br />
+        <abbr class="modified" title="2016-09-13T08:00:00-04:00">
+                Updated: September 13, 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://localhost:8000/author/alexandre-vicenzi.html">Alexandre Vicenzi</a>
+        </address>
+<p>In <a href="http://localhost:8000/category/news.html">News</a>.</p>
+<p>tags: <a href="http://localhost:8000/tag/pelican.html">pelican</a> <a href="http://localhost:8000/tag/python.html">python</a> <a href="http://localhost:8000/tag/theme.html">theme</a> </p>
+</footer><!-- /.post-info -->      <p><a href="https://github.com/alexandrevicenzi/Flex">Flex theme</a> 2.0 comes with new features.
+In fact there are two new features.</p>
+<p>The biggest change is localization support.
+Yes, Flex now can be translated into your language.
+You can read about <a href="https://github.com/alexandrevicenzi/Flex/wiki/Translations">here</a>.</p>
+<p>The biggest challege was to create a way to translate without breaking old versions.
+If you use English it changes nothing for you.
+But if you want to use translation you need to add new lines to your pelican configuration file.</p>
+<p>Here is a small example to use Flex in another language.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Enable i18n plugin, probably you already have some others here.</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;i18n_subsites&#39;</span><span class="p">]</span>
+<span class="c1"># Enable Jinja2 i18n extension used to parse translations.</span>
+<span class="n">JINJA_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;jinja2.ext.i18n&#39;</span><span class="p">]</span>
+<span class="c1"># Default theme language.</span>
+<span class="n">I18N_TEMPLATES_LANG</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+<span class="c1"># Your language.</span>
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s1">&#39;de&#39;</span>
+<span class="n">OG_LOCALE</span> <span class="o">=</span> <span class="s1">&#39;de_DE&#39;</span>
+<span class="n">LOCALE</span> <span class="o">=</span> <span class="s1">&#39;de_DE&#39;</span>
+</code></pre></div>
+
+<p>Last but not least, Flex supports the feature "X minute read", similar <a href="https://medium.com/">Medium</a>.</p>
+<p>Hope you enjoy this version.</p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'flex-pelican';
+        var disqus_identifier = 'flex-pelican-theme-update-2-0.html';
+        var disqus_url = 'http://localhost:8000/flex-pelican-theme-update-2-0.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//flex-pelican.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/alexandrevicenzi/Flex">github</a></li>
+                            <li><a href="/blog/feeds/all.atom.xml">rss</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'flex-pelican';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

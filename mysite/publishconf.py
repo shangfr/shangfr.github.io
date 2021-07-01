@@ -1,31 +1,24 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+
+# This file is only used if you use `make publish` or
+# explicitly specify it as your config file.
+
 import os
 import sys
-
 sys.path.append(os.curdir)
+from pelicanconf import *
 
-try:
-    from pelicanconf import *
-except ImportError:
-    sys.path.append(os.path.join(os.curdir, "docs"))
-    from pelicanconf import *
-
-SITEURL = "https://flex.alxd.me/"
-
+# If your site is available via HTTPS, make sure SITEURL begins with https://
+SITEURL = '/'
 RELATIVE_URLS = False
 
-USE_LESS = False
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 
-GOOGLE_ANALYTICS = "UA-55543164-6"
+DELETE_OUTPUT_DIRECTORY = True
 
-GOOGLE_ADSENSE = {
-    "ca_id": "ca-pub-6625957038449899",
-    "page_level_ads": True,
-    "ads": {
-        "aside": "8752710348",
-        "main_menu": "",
-        "index_top": "",
-        "index_bottom": "1124188687",
-        "article_top": "",
-        "article_bottom": "4843941849",
-    },
-}
+# Following items are often useful when publishing
+
+#DISQUS_SITENAME = ""
+#GOOGLE_ANALYTICS = ""

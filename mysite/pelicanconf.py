@@ -1,28 +1,25 @@
-from datetime import datetime
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
 
-AUTHOR = "Vencen Shang"
-SITEURL = "http://localhost:8000"
+AUTHOR = 'shangfr'
 SITENAME = "Shangfr"
-SITETITLE = "Shangfr's Website"
-SITESUBTITLE = "我的简介"
-SITEDESCRIPTION = "Shangfr - 商丰瑞."
-SITELOGO = '/images/shang.png'
+SITETITLE = "My Webite"
+SITESUBTITLE = "使用pelican制作的静态网站"
+SITEDESCRIPTION = "主题-Flex - The minimalist Pelican theme."
+
+SITEURL = ""
+SITELOGO = '/images/logo.png'
 FAVICON = '/images/favicon.ico'
-BROWSER_COLOR = "#333333"
+BROWSER_COLOR = "#007d65"
 PYGMENTS_STYLE = "monokai"
 
-ROBOTS = "index, follow"
+PATH = 'content'
 
-THEME = "pelican-themes/Flex"
-PATH = "content"
-OUTPUT_PATH = "output/"
-TIMEZONE = "America/New_York"
+THEME = "Flex"
 
-# PLUGIN_PATHS = ['pelican-plugins']
+TIMEZONE = 'Europe/Paris'
 
-# PLUGINS = ['i18n_subsites']
-
-# JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+DEFAULT_LANG = 'Chinese (Simplified)'
 
 I18N_TEMPLATES_LANG = "en"
 DEFAULT_LANG = "en"
@@ -33,8 +30,8 @@ DATE_FORMATS = {
     "en": "%B %d, %Y",
 }
 
-FEED_ALL_ATOM = "feeds/all.atom.xml"
-CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -44,7 +41,7 @@ MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
 SOCIAL = (
-    ("github", "https://github.com/alexandrevicenzi/Flex"),
+    ("github", "https://github.com/shangfr"),
     ("rss", "/blog/feeds/all.atom.xml"),
 )
 
@@ -60,18 +57,15 @@ CC_LICENSE = {
     "slug": "by-sa",
 }
 
-COPYRIGHT_YEAR = datetime.now().year
+COPYRIGHT_YEAR = 2021
 DEFAULT_PAGINATION = 10
 
-DISQUS_SITENAME = "flex-pelican"
-ADD_THIS_ID = "ra-55adbb025d4f7e55"
+#DISQUS_SITENAME = "flex-pelican"
+#ADD_THIS_ID = "ra-55adbb025d4f7e55"
 
-STATIC_PATHS = ["images", "extra/ads.txt", "extra/CNAME"]
+STATIC_PATHS = ["images"]
 
-EXTRA_PATH_METADATA = {
-    "extra/ads.txt": {"path": "ads.txt"},
-    "extra/CNAME": {"path": "CNAME"},
-}
+
 
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True

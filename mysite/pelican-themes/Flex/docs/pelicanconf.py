@@ -13,7 +13,7 @@ PYGMENTS_STYLE = "monokai"
 
 ROBOTS = "index, follow"
 
-THEME = "../"
+THEME = "notmyidea"
 PATH = "content"
 OUTPUT_PATH = "blog/"
 TIMEZONE = "America/New_York"
