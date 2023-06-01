@@ -27,8 +27,8 @@
 除了这些项目之外，以下开源项目对我产生过巨大的帮助，并且我对其也产生了浓厚的兴趣：
 
 - **人工智能和机器学习**： [scikit-learn](https://github.com/scikit-learn/scikit-learn)
-- **数据分析和可视化**： [pandas](https://github.com/pandas-dev/pandas) [echarts](https://github.com/apache/echarts)
-- **开发和用户界面设计**： [streamlit](https://github.com/streamlit/streamlit) [fastapi](https://github.com/tiangolo/fastapi) [Bootstrap](https://getbootstrap.com/)
+- **数据分析和可视化**： [pandas](https://github.com/pandas-dev/pandas) ` ` [echarts](https://github.com/apache/echarts)
+- **开发和用户界面设计**： [streamlit](https://github.com/streamlit/streamlit) ` ` [fastapi](https://github.com/tiangolo/fastapi) ` ` [Bootstrap](https://getbootstrap.com/)
 
 我相信开源的力量和合作的重要性。因此，我鼓励你浏览我的项目，提出问题、建议和改进建议。如果你对我正在进行的任何项目感兴趣或有任何合作机会，都请随时与我联系。
 
