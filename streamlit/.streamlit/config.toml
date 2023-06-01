@@ -1,0 +1,13 @@
+[theme]
+primaryColor = "#0E8388"
+backgroundColor = "#464547"
+secondaryBackgroundColor = "#33a3dc"
+textColor = "#CBE4DE"
+font = "monospace"
+
+[server]
+port = 8501
+enableStaticServing = true
+sslCertFile = ''
+sslKeyFile = ''
+
