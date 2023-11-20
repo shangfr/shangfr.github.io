@@ -18,7 +18,9 @@ Here are some of my main projects and contributions on GitHub:
 
  - [Aesopica](https://github.com/shangfr/Aesopica) This project curates a collection of English versions of Aesop's fables and utilizes AIGC technology to generate the content (moral) and illustrations for each fable. Finally, it applies TTS technology to synthesize animated videos.
 
- - [ChatSpider](https://github.com/shangfr/ChatSpider) This project uses the LangChain framework to connect various types of text and LLM models. As a result, users can have simple conversations to understand the main content of the text, perform information extraction, data organization, and data analysis.
+ - [Feed-Monitoring-Tool](https://github.com/shangfr/Feed-Monitoring-Tool) is an asynchronous tool that uses coroutines and timers to parse Feed information sources, save news containing keywords, and push them to chat groups through Feishu robots.
+
+ - [MRKL-AgentBot](https://github.com/shangfr/MRKL-AgentBot) is a groundbreaking project that uses the LangChain framework to connect various types of components. It is a MRKL application research system developed with Agent modules, containing Chat, RAG, and Agents.
 
  - [Shiny-jiebaR](https://github.com/shangfr/Shiny-jiebaR) This is one of my earliest open-source projects. It utilizes the jieba Chinese word segmentation library and the R Shiny framework to create a cloud-based [word segmentation application](https://shangfr.shinyapps.io/Chinese-jiebaR).
 
