@@ -18,7 +18,9 @@
 
  - [Aesopica](https://github.com/shangfr/Aesopica) 这个项目整理了英文版伊索寓言相关的故事集，并运用AIGC技术生成每个寓言故事的内容（寓意）与插图，最后应用[TTS技术](https://github.com/shangfr/StreamlitTTS)合成动画视频。
 
- - [ChatSpider](https://github.com/shangfr/ChatSpider) 这个项目使用LangChain框架链接起了各种类型的文本和LLM大模型，最终用户可以简单对话了解文本主要内容，进行信息提取、数据整理和数据分析。
+ - [Feed-Monitoring-Tool](https://github.com/shangfr/Feed-Monitoring-Tool) 基于协程和定时器实现异步定时协程解析Feed信息源，将包含关键词的资讯进行保存，并可以通过飞书机器人推送至聊天群组。
+
+ - [MRKL-AgentBot](https://github.com/shangfr/MRKL-AgentBot) LLM是开创性的，这个项目使用LangChain框架链接起了各种类型的组件，使用Agent模块开发的一个MRKL应用研究系统，包含Chat、RAG、Agents。
 
  - [Shiny-jiebaR](https://github.com/shangfr/Shiny-jiebaR) 这是我最早开源的项目，利用结巴分词，通过R语言shiny做的一个[云端分词应用](https://shangfr.shinyapps.io/Chinese-jiebaR)。 
 
